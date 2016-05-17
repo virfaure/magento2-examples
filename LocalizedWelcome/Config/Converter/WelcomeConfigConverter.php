@@ -39,6 +39,6 @@ class WelcomeConfigConverter implements ConverterInterface
      */
     private function getCodeAttribute($node)
     {
-        return $node->attributes->getNamedItem('code')->nodeValue;
+        return strtolower($node->attributes->getNamedItem('code')->nodeValue);
     }
 }

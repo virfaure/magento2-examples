@@ -32,4 +32,20 @@
             <argument name="schema" xsi:type="string">welcome.xsd</argument>
         </arguments>
     </virtualType>
+
+    <type name="Training\LocalizedWelcome\Model\NekudoGeoIpLookup">
+        <arguments>
+            <argument name="httpClient" xsi:type="object">Magento\Framework\HTTP\Client\Curl</argument>
+        </arguments>
+    </type>
+
+    <preference for="Training\LocalizedWelcome\Model\GeoIpLookupInterface"
+                type="Training\LocalizedWelcome\Model\CachingGeoIpLookupDecorator" />
+
+    <type name="Training\LocalizedWelcome\Model\CachingGeoIpLookupDecorator">
+        <arguments>
+            <argument name="subject" xsi:type="object">Training\LocalizedWelcome\Model\NekudoGeoIpLookup</argument>
+        </arguments>
+    </type>
+
 </config>
