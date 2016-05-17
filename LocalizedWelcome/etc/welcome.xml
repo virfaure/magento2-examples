@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<welcome_message
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:training1:LocalizedWelcome/etc/welcome.xsd">
+    <country code="us">
+        <state code="default">Welcome dear visitor!</state>
+        <state code="TX">Howdy</state>
+        <state code="CA">Hi</state>
+        <state code="NY">Hello NY!</state>
+    </country>
+    <country code="ua">
+        <state code="default">ласкаво просимо!</state>
+    </country>
+    <country code="de">
+        <state code="default">Herzlich Willkommen!</state>
+    </country>
+    <country code="fr">
+        <state code="default">Bonjour!</state>
+    </country>
+</welcome_message>

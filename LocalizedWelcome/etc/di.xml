@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <type name="Training\LocalizedWelcome\Model\LocalizadedWelcomeMessage">
+        <arguments>
+            <argument name="config" xsi:type="object">Training\LocalizedWelcome\Model\Welcome\Config\Data\Virtual</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="Training\LocalizedWelcome\Model\Welcome\Config\Data\Virtual"
+                 type="Magento\Framework\Config\Data">
+        <arguments>
+            <argument name="cacheId" xsi:type="string">training_welcome_config</argument>
+            <argument name="reader" xsi:type="object">Training\LocalizedWelcome\Model\Welcome\Config\Reader\Virtual</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Training\LocalizedWelcome\Model\Welcome\Config\Reader\Virtual"
+                 type="Magento\Framework\Config\Reader\FileSystem">
+        <arguments>
+            <argument name="fileName" xsi:type="string">welcome.xml</argument>
+            <argument name="schemaLocator" xsi:type="object">Training\LocalizedWelcome\Model\Welcome\Config\SchemaLocator\Virtual</argument>
+            <argument name="converter" xsi:type="object">Training\LocalizedWelcome\Config\Converter\WelcomeConfigConverter</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Training\LocalizedWelcome\Model\Welcome\Config\SchemaLocator\Virtual"
+                 type="Magento\Framework\Config\GenericSchemaLocator">
+        <arguments>
+            <argument name="moduleName" xsi:type="string">Training_LocalizedWelcome</argument>
+            <argument name="schema" xsi:type="string">welcome.xsd</argument>
+        </arguments>
+    </virtualType>
+</config>
