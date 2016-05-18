@@ -1,0 +1,12 @@
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.details">
+            <block class="Magento\Framework\View\Element\Text\ListText" name="options.tab.wrapper" group="detailed_info">
+                <arguments>
+                    <argument name="title" translate="true" xsi:type="string">Options</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        <move element="product.info.options.wrapper" destination="options.tab.wrapper" />
+    </body>
+</page>
