@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<page layout="1column"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="content">
+            <container name="wrapper.cached" htmlTag="div">
+                <block class="Training\FpcCache\Block\DateTime" name="cached.datetime"/>
+            </container>
+            <container name="wrapper.shared" htmlTag="div">
+                <block class="Training\FpcCache\Block\DateTime" name="shared.datetime" ttl="20"/>
+            </container>
+            <container name="wrapper.private" htmlTag="div">
+                <block class="Training\FpcCache\Block\DateTimePrivate" name="private.datetime" ttl="20"/>
+            </container>
+        </referenceBlock>
+    </body>
+</page>
