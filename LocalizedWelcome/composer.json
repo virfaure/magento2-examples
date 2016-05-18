@@ -1,0 +1,19 @@
+{
+  "name": "training/module-localized-welcome",
+  "description": "N/A",
+  "require": {
+    "php": "~5.5.22|~5.6.0|~7.0.0"
+  },
+  "type": "magento2-module",
+  "license": [
+    "BSD-3-Clause"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Training\\LocalizedWelcome\\": ""
+    }
+  }
+}
